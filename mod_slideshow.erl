@@ -81,7 +81,7 @@ observe_media_stillimage({media_stillimage, Id, _Props}, Context) ->
     end.
     
 %% @doc Handle a request for a slideshow popup
-observe_postback_notify({postback_notify, "slideshow"}, Context) ->
+observe_postback_notify(#postback_notify{message="slideshow"}, Context) ->
     Ids = [ list_to_integer(Id) || Id <- z_context:get_q_all("id", Context) ],
     Ids1 = [ Id || Id <- Ids, z_acl:rsc_visible(Id, Context) ],
     StartId = case z_context:get_q("start_id", Context) of
@@ -97,7 +97,8 @@ observe_postback_notify({postback_notify, "slideshow"}, Context) ->
                         {height, 600}
                     ],
                     Context);
-observe_postback_notify(_, _Context) ->
+observe_postback_notify(X, _Context) ->
+    ?DEBUG(X),
     undefined.
 
     reorder_ids(undefined, Ids) ->
