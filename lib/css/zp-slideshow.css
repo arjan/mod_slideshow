@@ -12,6 +12,9 @@
 
 .slideshow-viewer {
 	position: relative;
+}
+
+.slideshow-viewer.loaded {
     overflow: visible!important;
 }
 	

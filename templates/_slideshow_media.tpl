@@ -19,6 +19,9 @@
 				%}
 			{% endfor %}
 		</div>
+        {% javascript %}
+            setTimeout(function() { $(".slideshow-viewer").addClass("loaded"); }, 500);
+        {% endjavascript %}
     {% endif %}
 </div>
 {% endif %}
