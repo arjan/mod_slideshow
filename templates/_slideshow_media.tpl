@@ -9,7 +9,7 @@
 		    %}
 	    </div>
     {% else %}
-	    <div class="slideshow-viewer do_slidesjs" data-slidesjs="width: {{ slide_width|default:width }}, height: {{ slide_height|default:height }}, play: { effect: 'slide', interval: {{ slide_timeout|default:(m.config.mod_slideshow.timeout.value)|default:2000 }}, auto: true, pauseOnHover: true }, effect: { slide: { speed: {{ slide_speed|default:(m.config.mod_slideshow.speed.value)|default:2000 }} } }, pagination: false">
+	    <div class="slideshow-viewer do_slidesjs" data-slidesjs="width: {{ slide_width|default:width }}, height: {{ slide_height|default:height }}, play: { effect: 'slide', interval: {{ slide_timeout|default:(m.config.mod_slideshow.timeout.value)|default:2000 }}, auto: true, pauseOnHover: true }, effect: { slide: { speed: {{ slide_speed|default:(m.config.mod_slideshow.speed.value)|default:2000 }} } }, pagination: false" style="width: {{ slide_width|default:width }}px; height: {{ slide_height|default:height }}px">
 			{% for p_id in parts|is_visible %}
 				{% catinclude "_slideshow_part.tpl" p_id
 					width=width height=height
