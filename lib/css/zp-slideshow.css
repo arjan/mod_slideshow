@@ -32,10 +32,11 @@
 	.slideshow-viewer-left-arrow,
 	.slideshow-viewer-right-arrow {
 		position: absolute;
-		top: 97px;
+		top: 50%;
+        margin-top: -15px;
 		width: 29px;
 		height: 29px;
-		background: #000 url(../images/slideshow-arrows.png) no-repeat;
+		background: #000 url(/lib/images/slideshow-arrows.png) no-repeat;
 		cursor: pointer;
 		display: none;
 		z-index: 999;
@@ -55,4 +56,5 @@
 	.slideshow-viewer:hover .slideshow-viewer-right-arrow {
 		display: block;
 	}
+
 
